@@ -7,13 +7,9 @@ def encode(input):
         encode_list[n] = str(encode_list[n])
     return "".join(encode_list)
     
-    
-        
-
 def decode(encoded_pass):
     pass
 
-#Nicholas Groth
 def main():
 
     menu_option = 0
