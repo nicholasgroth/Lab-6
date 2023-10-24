@@ -1,4 +1,4 @@
-#Nicholas Groth
+# Nicholas Groth
 def encode(input):
     encode_list = list(str(input))
     for n in range(len(encode_list)):
@@ -6,12 +6,16 @@ def encode(input):
     for n in range(len(encode_list)):
         encode_list[n] = str(encode_list[n])
     return "".join(encode_list)
-    
+
 def decode(encoded_pass):
-    pass
+    decoded = ""
+    for digit in encoded_pass:
+        new = int(digit)
+        new -= 3
+        decoded += str(new)
+    return decoded
 
 def main():
-
     menu_option = 0
 
     while menu_option != 3:
@@ -27,6 +31,10 @@ def main():
             user_input = int(input("Please enter your password to encode: "))
             encoded_password = encode(user_input)
 
+        if menu_option == 2:
+            decoded_password = decode(encoded_password)
+            print(f"The encoded password is {encoded_password}, and the original password is {decoded_password}.")
+            print()
+
 if __name__ == "__main__":
     main()
-
